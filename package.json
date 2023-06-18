@@ -1,0 +1,31 @@
+{
+	"name": "eventdex-sdk",
+	"version": "1.0.0",
+	"description": "A Node.js/TypeScript SDK for the EventDex backend",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yourusername/eventdex-sdk.git"
+	},
+	"keywords": [
+		"eventdex",
+		"web3",
+		"smart-contracts",
+		"ethereum",
+		"sdk"
+	],
+	"author": "Your Name <your.email@example.com>",
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^0.21.1"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"typescript": "^4.4.4"
+	}
+}

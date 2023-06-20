@@ -1,9 +1,9 @@
 /** @format */
 
 import axios from "axios";
+import { END_POINT } from "../config/api.config";
 
 // Define the base URL for the EventDex API
-const API_URL = "https://api.eventdex.io";
 
 // Define the structure of an error response from the API
 export interface ErrorResponse {
@@ -21,11 +21,14 @@ export default class EventDexAPI {
   // Fetch event data from the API
   async getEventData(indexId: string): Promise<any> {
     try {
-      const response = await axios.get(`${API_URL}/get/event-data/${indexId}`, {
-        headers: {
-          "x-api-key": this.apiKey,
-        },
-      });
+      const response = await axios.get(
+        `${END_POINT}/get/event-data/${indexId}`,
+        {
+          headers: {
+            "x-api-key": this.apiKey,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       this.handleErrors(error);
@@ -36,7 +39,7 @@ export default class EventDexAPI {
   async manageIndexes(action: string, indexId: string): Promise<any> {
     try {
       const response = await axios.post(
-        `${API_URL}/manage/indexes`,
+        `${END_POINT}/manage/indexes`,
         {
           action,
           indexId,
@@ -57,7 +60,7 @@ export default class EventDexAPI {
   async accessDatabase(action: string, data: any): Promise<any> {
     try {
       const response = await axios.post(
-        `${API_URL}/access/database`,
+        `${END_POINT}/access/database`,
         {
           action,
           data,

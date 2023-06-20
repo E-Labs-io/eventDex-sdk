@@ -1,12 +1,13 @@
 /** @format */
 
-import EventDexAPI from "./api/eventDexAPI";
+import EventDexAPI, { ErrorResponse } from "./api/eventDexAPI";
 
 // Create an instance of the EventDexAPI class
-const sdkInstance = (api: string) => new EventDexAPI(api);
+const initiateEventDex = (api: string) => new EventDexAPI(api);
 
 /**
  *
  */
 // Export the sdkInstance for users to interact with the SDK
-export default sdkInstance;
+export default initiateEventDex;
+export type { EventDexAPI, ErrorResponse };
